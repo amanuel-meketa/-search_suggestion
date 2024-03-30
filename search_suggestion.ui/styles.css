@@ -1,0 +1,74 @@
+/* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+header {
+  background-color: #f2f2f2;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+}
+
+.autocomplete {
+  position: relative;
+}
+
+#searchInput {
+  width: 400px;
+  padding: 10px;
+  border-radius: 24px;
+  border: 1px solid #dfe1e5;
+  outline: none;
+  font-size: 16px;
+}
+
+#autocompleteResults {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #dfe1e5;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: none;
+}
+
+.autocomplete-result {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-result:hover {
+  background-color: #f1f3f4;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+  color: #555;
+}
