@@ -1,5 +1,3 @@
-#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 USER app
 WORKDIR /app
@@ -9,6 +7,8 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["search_suggestion.api/search_suggestion.api.csproj", "search_suggestion.api/"]
+COPY ["search_suggestion.application/search_suggestion.application.csproj", "search_suggestion.application/"]
+COPY ["search_suggestion.data/search_suggestion.data.csproj", "search_suggestion.data/"]
 RUN dotnet restore "./search_suggestion.api/./search_suggestion.api.csproj"
 COPY . .
 WORKDIR "/src/search_suggestion.api"
