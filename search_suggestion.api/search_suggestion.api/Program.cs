@@ -15,7 +15,15 @@ builder.Services.AddSingleton<HttpClient>();
 
 // Add ICommentService and CommentService
 builder.Services.AddScoped<ICommentService, CommentService>();
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,7 +34,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
-
 app.MapControllers();
+app.UseCors("AllowAll");
 
 app.Run();
