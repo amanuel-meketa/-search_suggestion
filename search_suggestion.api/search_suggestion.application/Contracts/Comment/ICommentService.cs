@@ -1,9 +1,9 @@
-﻿using search_suggestion.data.Model;
+﻿using search_suggestion.application.Dtos;
 
 namespace search_suggestion.application.Contracts.Search
 {
     public interface ICommentService
     {
-        Task<List<Comment>> Get();
+        Task<List<CommentDto>> Get();
     }
 }

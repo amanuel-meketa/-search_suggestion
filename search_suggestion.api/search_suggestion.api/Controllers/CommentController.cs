@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using search_suggestion.application.Contracts.Search;
+using search_suggestion.application.Dtos;
 
 namespace search_suggestion.api.Controllers
 {
@@ -15,7 +16,7 @@ namespace search_suggestion.api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetComments()
+        public async Task<ActionResult<List<CommentDto>>> GetComments()
         {
             try
             {
