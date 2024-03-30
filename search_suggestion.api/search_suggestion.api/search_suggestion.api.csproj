@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\search_suggestion.application\search_suggestion.application.csproj" />
   </ItemGroup>
 
 </Project>

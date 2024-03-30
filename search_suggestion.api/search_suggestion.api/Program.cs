@@ -1,11 +1,18 @@
+using search_suggestion.application.Contracts.Search;
+using search_suggestion.application.Service.Search;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Add HttpClient as a singleton
+builder.Services.AddSingleton<HttpClient>();
+
+// Add ICommentService and CommentService
+builder.Services.AddScoped<ICommentService, CommentService>();
 
 var app = builder.Build();
 
