@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  search_suggestion.api:
+    image: ${DOCKER_REGISTRY-}searchsuggestionapi
+    build:
+      context: .
+      dockerfile: search_suggestion.api/Dockerfile
+    ports:
+            - "8080:8080"
